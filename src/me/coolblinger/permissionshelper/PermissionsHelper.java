@@ -40,7 +40,7 @@ public class PermissionsHelper extends JavaPlugin {
 		List<String> permissionsList = new ArrayList<String>();
 		for (Plugin plugin:plugins) {
 			for (Permission permission:plugin.getDescription().getPermissions()) {
-				permissionsList.add(permission.getName() + ": true #" + plugin.getDescription().getName());
+				permissionsList.add("- " + permission.getName() + ": true #" + plugin.getDescription().getName());
 			}
 		}
 		File file = new File("plugins" + File.separator + "PermissionsHelper" + File.separator + "list.txt");

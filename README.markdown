@@ -7,6 +7,10 @@
 
 ## Changelog:
 
+__1.0.1__
+
+> -   Added a dash in front of each permissions node
+
 __1.0__
 
 > -   Initial release
