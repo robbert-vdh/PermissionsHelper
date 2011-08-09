@@ -7,6 +7,10 @@
 
 ## Changelog:
 
+__1.0.2__
+
+> -   Added a list of plugins that did not have permissions nodes included
+
 __1.0.1__
 
 > -   Added a dash in front of each permissions node

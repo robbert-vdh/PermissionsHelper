@@ -8,6 +8,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
+import javax.print.DocFlavor;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -33,12 +34,18 @@ public class PermissionsHelper extends JavaPlugin {
 		}, 600);
 	}
 
+	@SuppressWarnings({"ResultOfMethodCallIgnored"})
 	public void generatePermissionsList () {
 		log.info("PermissionsHelper will now generate a list of permissions and write them to plugins/PermissionsHelper/list.txt");
 		PluginManager pm = this.getServer().getPluginManager();
 		Plugin[] plugins = pm.getPlugins();
 		List<String> permissionsList = new ArrayList<String>();
+		List<String> skippedList = new ArrayList<String>();
 		for (Plugin plugin:plugins) {
+			if (plugin.getDescription().getPermissions().isEmpty()) {
+				skippedList.add("#" + plugin.getDescription().getName());
+				continue;
+			}
 			for (Permission permission:plugin.getDescription().getPermissions()) {
 				permissionsList.add("- " + permission.getName() + ": true #" + plugin.getDescription().getName());
 			}
@@ -52,6 +59,16 @@ public class PermissionsHelper extends JavaPlugin {
 				for (String s:permissionsList) {
 					printWriter.write(s);
 					printWriter.println();
+				}
+				if (!skippedList.isEmpty()) {
+					printWriter.println();
+					printWriter.println();
+					printWriter.write("#Plugins that don't have any included permissions nodes:");
+					printWriter.println();
+					for (String s:skippedList) {
+						printWriter.write(s);
+						printWriter.println();
+					}
 				}
 				printWriter.close();
 				log.info("Writing has finished.");
