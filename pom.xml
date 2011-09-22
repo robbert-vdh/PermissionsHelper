@@ -5,7 +5,7 @@
 
     <groupId>me.coolblinger</groupId>
     <artifactId>PermissionsHelper</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>SNAPSHOT</version>
 
 	<build>
 		<finalName>PermissionsHelper</finalName>
