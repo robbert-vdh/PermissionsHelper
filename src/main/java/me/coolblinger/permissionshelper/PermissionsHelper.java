@@ -39,8 +39,6 @@ public class PermissionsHelper extends JavaPlugin {
 		List<String> permissionsList = new ArrayList<String>();
 		List<String> skippedList = new ArrayList<String>();
 		for (Plugin plugin:plugins) {
-			plugin.getDescription();
-			plugin.getDescription().getPermissions();
 			if (plugin.getDescription().getPermissions().isEmpty()) {
 				skippedList.add("#" + plugin.getDescription().getName());
 				continue;
