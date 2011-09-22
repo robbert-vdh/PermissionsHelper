@@ -1,4 +1,4 @@
-# Tested with RB [_1000_] (http://ci.bukkit.org/job/dev-CraftBukkit/1000/)
+# Tested with RB [_1185_] (http://ci.bukkit.org/job/dev-CraftBukkit/1185/)
 ## Dependencies:
 -   Plugins that support SuperPerms
 
@@ -6,6 +6,10 @@
 -   This will only work with plugins that support SuperPerms, because it pulls the permissions from the plugin.yml files.
 
 ## Changelog:
+
+__1.0.3__
+
+> -   Made it compatible with the latest Bukkit build.
 
 __1.0.2__
 
