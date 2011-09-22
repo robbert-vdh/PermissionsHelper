@@ -1,6 +1,5 @@
 package me.coolblinger.permissionshelper;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -8,9 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
-import javax.print.DocFlavor;
 import java.io.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -42,6 +39,8 @@ public class PermissionsHelper extends JavaPlugin {
 		List<String> permissionsList = new ArrayList<String>();
 		List<String> skippedList = new ArrayList<String>();
 		for (Plugin plugin:plugins) {
+			plugin.getDescription();
+			plugin.getDescription().getPermissions();
 			if (plugin.getDescription().getPermissions().isEmpty()) {
 				skippedList.add("#" + plugin.getDescription().getName());
 				continue;
